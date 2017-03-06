@@ -1,0 +1,1 @@
+# This will serve as storage when AWS S3 is not available
