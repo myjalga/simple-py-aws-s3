@@ -22,6 +22,17 @@ Browse the files
 * bucket.py
   * Functions for every APIs.
 * public folder
-  * public files that can access at front-end side
+  * Public files that can be access at front-end side
   * Also includes the HTML, CSS, JS, and media.
 
+### To Start the project
+* Make sure you have install all the requirements
+  * Setup the python environment of the server.
+  * Install pip
+  * Install Flask using pip
+  * Clone the project
+  * run the the command `python server.py`
+* Deploying the App in a Linux since I am using linux environment when depveloping the app. Please refer to the link below.
+  * https://www.phusionpassenger.com/library/walkthroughs/deploy/python/ownserver/apache/oss/el7/deploy_app.html
+
+### Notes
