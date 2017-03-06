@@ -36,3 +36,4 @@ Browse the files
   * https://www.phusionpassenger.com/library/walkthroughs/deploy/python/ownserver/apache/oss/el7/deploy_app.html
 
 ### Notes
+* Folder in the public named as `folders` is a backup storage when AWS-S3 is not available. This folder will serve as storage of the files and partition it just like a buckets in the AWS-S3
