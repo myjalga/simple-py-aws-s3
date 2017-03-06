@@ -1,0 +1,31 @@
+
+
+.main-container {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.breadcrumb li a {
+    cursor: pointer;
+}
+
+.user-select-action {
+    cursor: pointer;
+}
+
+.user-action {
+    float: right;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: grey;
+    color: white;
+}
+
+.checkbox-list {
+    margin-right: 20px;
+}
