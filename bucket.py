@@ -50,11 +50,38 @@ def deleteBucket(name):
             shutil.rmtree(directory)
     return {'success': True}
 
+# Process rename bucket
+def procRenameBucket(prev, curr):
+    content = []
+    bucket = _conn.get_bucket(prev)
+    k = Key(bucket)
+    for key in bucket.list():
+        k = bucket.get_key(key.name)
+        k.get_contents_to_filename(_dir + '/' + prev + '/' + filename)
+        content.append({'file': filename, 'path': _dir + '/' + prev + '/' + filename})
+    
+    # Delete the bucket
+    _conn.delete_bucket(prev)
+
+    # create a new bucket
+    _conn.create_bucket(curr)
+    currBucket = _conn.get_bucket(curr)
+    for f in content:
+        file = open(f.path, '+r')
+        k = Key(currBucket)
+        k.key = f.file
+        sent = k.set_contents_from_filename(k.file)
+    return True
+
 # Rename a bucket
 def renameBucket(prevName, currName):
     if _active:
         # Do something here to Rename bucket in AWS S3
-        print "Rename"
+        directory = _dir + '/' + prevName
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        procRenameBucket(prevName, currName)
     else:
         # Rename folder
         prev = _dir + '/' + prevName
